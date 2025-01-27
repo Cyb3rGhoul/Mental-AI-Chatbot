@@ -1,4 +1,4 @@
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyA41_hXuheAmRDnqhx1suq2UPhtfY0khP8`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=`;
 
 const prompt = document.querySelector("#prompt");
 const submitBtn = document.querySelector("#submit");
