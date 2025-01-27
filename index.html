@@ -5,167 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthBuddy AI Assistant</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #2196F3;
-            --background-color: #f0f4f8;
-            --text-color: #333;
-            --border-radius: 20px;
-            --shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', 'Arial', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #e0f2f1, #b2ebf2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .chat-container {
-            width: 70%;
-            height: 70vh;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            position: relative;
-            max-width: 800px;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .chat-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .chat-header h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-
-        .header-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .header-icons i {
-            font-size: 1.3rem;
-            transition: transform 0.3s ease;
-        }
-
-        .header-icons i:hover {
-            transform: scale(1.2) rotate(360deg);
-        }
-
-        .messages-area {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 20px;
-            background: #f9fafb;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .initial-welcome {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 20px;
-            box-shadow: var(--shadow);
-            animation: slideIn 0.5s ease;
-        }
-
-        .welcome-avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary-color);
-        }
-
-        .prompt-section {
-            padding: 20px;
-            background: white;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .input-container {
-            display: flex;
-            background: var(--background-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        #prompt {
-            flex-grow: 1;
-            border: none;
-            padding: 15px;
-            font-size: 1rem;
-            background: transparent;
-        }
-
-        .input-actions {
-            display: flex;
-        }
-
-        .action-btn {
-            background: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .action-btn:hover {
-            background: var(--primary-color);
-            transform: scale(1.05);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        @media (max-width: 768px) {
-            .chat-container {
-                width: 95%;
-                height: 90vh;
-            }
-            
-            .chat-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="chat-container">
@@ -178,27 +18,29 @@
         </div>
         <div class="messages-area" id="messagesArea">
             <div class="initial-welcome">
-                <img src="ai.png" alt="HealthBuddy AI" class="welcome-avatar">
+                <img src="ai-img.png" alt="HealthBuddy AI" class="welcome-avatar">
                 <div class="welcome-message">
-                    Hello! I'm your personal health companion. How can I support your wellness today?
+                    <h2>Welcome to HealthBuddy AI</h2>
+                    <p>I'm your personal health companion, ready to provide guidance on health and wellness topics. How can I assist you today?</p>
+                    <small>Please note: I provide general health information and support, not medical diagnosis or treatment.</small>
                 </div>
             </div>
         </div>
         <div class="prompt-section">
             <div class="input-container">
-                <input type="text" id="prompt" placeholder="Type your health query...">
+                <input type="text" id="prompt" placeholder="Ask your health-related question...">
                 <div class="input-actions">
-                    <button id="image" class="action-btn">
+                    <button id="image" class="action-btn" title="Upload health-related image">
                         <i class="fas fa-image"></i>
                         <input type="file" accept="image/*" hidden>
                     </button>
-                    <button id="submit" class="action-btn">
+                    <button id="submit" class="action-btn" title="Send message">
                         <i class="fas fa-paper-plane"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
